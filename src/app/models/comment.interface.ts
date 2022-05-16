@@ -3,4 +3,5 @@ export interface IComment {
   postId: number;
   email: string;
   body: string;
+  name: string;
 }
