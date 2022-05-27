@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from "@angular/common/http";
 
 import {CommentRoutingModule} from './comment-routing.module';
-import {CommentService} from "./services";
+import {CommentResolveService, CommentService} from "./services";
 import {CommentComponent} from './components/comment/comment.component';
 import {CommentsComponent} from './components/comments/comments.component';
 import {CommentDetailsComponent} from './components/comment-details/comment-details.component';
@@ -21,7 +21,8 @@ import {CommentDetailsComponent} from './components/comment-details/comment-deta
     HttpClientModule
   ],
   providers: [
-    CommentService
+    CommentService,
+    CommentResolveService
   ]
 })
 export class CommentModule {
