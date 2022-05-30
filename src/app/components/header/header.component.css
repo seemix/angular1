@@ -1,0 +1,17 @@
+.headWrap {
+  width: 100%;
+  background-color: indigo;
+  font-size: 18px;
+  color: snow;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  gap: 10px;
+
+}
+a {
+  color: snow;
+  text-decoration: none;
+  font-family: Tahoma;
+}

@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+    <form [formGroup]="form">
+      <div>
+        <mat-form-field>
+          <mat-label>User Name:</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <span *ngIf="usernameError" style="color: brown">{{usernameError}}</span>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>password:</mat-label>
+          <input matInput formControlName="password">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>confirm password:</mat-label>
+          <input matInput formControlName="confirmPassword">
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button color="accent" [disabled]=form.invalid (click)="register()">Register!</button>
+      </div>
+    </form>
+  </div>
+</div>
