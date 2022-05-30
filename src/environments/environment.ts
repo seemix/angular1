@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://jsonplaceholder.typicode.com/'
+  baseUrl: 'http://owu.linkpc.net/api/v3'
 };
 
 /*

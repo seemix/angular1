@@ -1,10 +1,10 @@
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
-const { baseUrl } = environment;
+const {baseUrl} = environment;
 
-export const
-  urls = {
-    users: `${baseUrl}users`,
-    posts: `${baseUrl}posts`,
-    comments: `${baseUrl}comments`,
-  }
+export const urls = {
+  auth: `${baseUrl}/auth`,
+  users: `${baseUrl}/users`,
+  cars: `${baseUrl}/cars`,
+}
+
