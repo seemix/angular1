@@ -10,7 +10,7 @@
       <div>
         <mat-form-field>
           <mat-label>password:</mat-label>
-          <input matInput formControlName="password">
+          <input matInput type="password" formControlName="password">
         </mat-form-field>
         <div>
           <button mat-raised-button color="accent" [disabled]=form.invalid (click)="login()">Login</button>

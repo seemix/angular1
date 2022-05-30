@@ -22,6 +22,8 @@
       </div>
       <div>
         <button mat-raised-button color="primary" [disabled]=form.invalid (click)="save()">save</button>
+        &nbsp;
+        <button mat-raised-button (click)="form.reset()">reset</button>
       </div>
     </form>
   </div>
