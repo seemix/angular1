@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
 
-
-
 }
 .wrapper {
   display: flex;
@@ -12,5 +10,5 @@
   margin: 0;
   padding: 20px;
   background-color: #f0f0f0;
-  height: 100vh;
+  height: 50vh;
 }
