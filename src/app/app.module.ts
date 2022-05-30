@@ -20,6 +20,7 @@ import {TestingComponent} from './components/testing/testing.component';
 import {PopupComponent} from './components/popup/popup.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatCardModule} from "@angular/material/card";
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {MatCardModule} from "@angular/material/card";
     HeaderComponent,
     TestingComponent,
     PopupComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

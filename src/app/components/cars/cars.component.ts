@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {RegEx} from "../../constants";
 import {CarService} from "../../services";
 import {ICar} from "../../models";
+import {ConfirmDialogComponent} from "../confirm-dialog/confirm-dialog.component";
 
 @Component({
   selector: 'app-cars',
@@ -14,8 +16,9 @@ export class CarsComponent implements OnInit {
   form: FormGroup;
   cars: ICar[];
   editCar: ICar | null;
+  deleteCarP: ICar | null;
 
-  constructor(private carService: CarService) {
+  constructor(private carService: CarService, private dialog: MatDialog) {
     this._createForm()
   }
 
@@ -58,20 +61,29 @@ export class CarsComponent implements OnInit {
     }
   }
 
-  deleteCar(id: number): void {
-    if (confirm(`Are you sure to delete?`)) {
-
-
-      this.carService.deleteById(id).subscribe(() => {
-        const index = this.cars.findIndex(car => car.id === id);
-        this.cars.splice(index, 1);
-      })
-    }
-  }
+  // deleteCar(id: number): void {
+  //   if (confirm(`Are you sure to delete?`)) {
+  //     this.carService.deleteById(id).subscribe(() => {
+  //       const index = this.cars.findIndex(car => car.id === id);
+  //       this.cars.splice(index, 1);
+  //     })
+  //   }
+  // }
 
   editingCar(car: ICar): void {
     this.editCar = car;
     this.form.setValue({model: car.model, year: car.year, price: car.price})
-   }
+  }
 
+  deleteCar(id: number): void {
+    this.dialog.open(ConfirmDialogComponent, {data: id}).afterClosed().subscribe(res => {
+      console.log(res);
+      if(res){
+      this.carService.deleteById(id).subscribe(() => {
+        const index = this.cars.findIndex(car => car.id === id);
+        this.cars.splice(index, 1);
+      })}
+    })
+  }
 }
+
